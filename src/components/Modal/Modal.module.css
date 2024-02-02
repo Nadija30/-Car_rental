@@ -1,0 +1,42 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 100vh;
+  width: 100vw;
+  overscroll-behavior: contain;
+  background-color: #12141780;
+
+  @media screen and (min-width: 768px) {
+    padding: 30px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    overflow-y: scroll;
+  }
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 110;
+  margin-left: auto;
+  margin-right: auto;
+  width: 541px;
+  --tw-translate-x: -50%;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  overflow-x: hidden;
+  border-radius: 24px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 40px;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}

@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
+import modalCss from './Modal.module.css';
 import { handleClose } from '../../shared/utils';
 import Button from '../Button';
 import { createPortal } from 'react-dom';
@@ -31,8 +31,8 @@ const Modal = ({ onClose, children, isOpen }) => {
   }, [handleModalClose]);
 
   return createPortal(
-    <div className="backdrop" onClick={handleModalClose}>
-      <div className="modal max-w-full dark:bg-slate-700">
+    <div className={modalCss.backdrop} onClick={handleModalClose}>
+      <div className={modalCss.modal}>
         <Button
           onClick={onClose}
           className="close"
