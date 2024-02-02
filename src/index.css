@@ -15,7 +15,6 @@
   --color-modal-wrap: rgba(18, 20, 23, 0.5);
 }
 body {
-
   background-color: var(--color-text-button-and-back);
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
@@ -24,9 +23,9 @@ body {
   line-height: 1.5;
   color: var(--color-text-main);
   width: 100%;
+  min-height: 100vh;
   margin: 0;
 }
-
 
 h1,
 h2,
@@ -59,3 +58,23 @@ button {
 * {
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+  color: var(--color-text-main);
+}
+
+a.active {
+  color: var(--color-text-loadmore-hover);
+}
+
+/* #root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+html {
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+} */
