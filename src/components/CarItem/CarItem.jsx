@@ -17,7 +17,7 @@ import { selectFavorites } from '../../redux/cars/carsSelectors';
 import CardInfoBlock from './CardInfoBlock';
 import ThumbImage from 'components/ThumbImage';
 
-export const CarItem = ({ car }) => {
+const CarItem = ({ car }) => {
   const { isOpen, open, close } = useToggle(false);
   const favorites = useSelector(selectFavorites);
   const dispatch = useDispatch();

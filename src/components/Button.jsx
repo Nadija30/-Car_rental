@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import icons from '../assets/sprite.svg';
+import icons from '../assets/images/icons.svg';
 
 const Button = ({
   label,

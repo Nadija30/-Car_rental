@@ -1,2 +1,3 @@
 import DefaultCar from './car.jpg';
-export { DefaultCar };
+import Car from './whitecar.png';
+export { DefaultCar, Car };

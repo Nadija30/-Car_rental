@@ -1,8 +1,9 @@
 import { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { createPortal } from 'react-dom';
+
 import { handleClose } from '../../shared/utils';
 import Button from '../Button';
+import { createPortal } from 'react-dom';
 
 const modalContainer = document.getElementById('modal');
 
