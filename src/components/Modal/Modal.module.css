@@ -20,23 +20,71 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 110;
-  margin-left: auto;
-  margin-right: auto;
-  width: 541px;
-  --tw-translate-x: -50%;
-  --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  overflow-x: hidden;
-  border-radius: 24px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transform: translate(-50%, -50%);
   padding: 40px;
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
-    0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  background-color: #fff;
+  border-radius: 24px;
+  width: 335px;
+  height: 100vh;
+
+  @media screen and (min-width: 768px) {
+    width: 541px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 752px;
+  }
+}
+.modalCarWrap {
+  margin: 0 auto;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  gap: 12px;
+
+  @media screen and (min-width: 768px) {
+    gap: 16px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 24px;
+  }
+}
+.modalCar {
+  display: flex;
+  width: 100%;
+  height: 604px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+.modalImgWrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 248px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #f3f3f2;
+}
+.modalImg {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  width: 300px;
+  background: linear-gradient(
+      180deg,
+      rgba(18, 20, 23, 0.5) 2.5%,
+      rgba(18, 20, 23, 0) 41.07%
+    ),
+    #f3f3f2;
+
+  @media screen and (min-width: 768px) {
+    width: 461px;
+  }
 }

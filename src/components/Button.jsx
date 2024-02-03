@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import buttonCss from './CarItem/Button.module.css';
 import icons from '../assets/images/icons.svg';
 
 const Button = ({
@@ -17,9 +17,7 @@ const Button = ({
       data-id={id}
       type={type}
       className={
-        className
-          ? `${className}`
-          : 'flex h-[28px] w-[28px] items-center justify-center rounded-full border-none outline-none transition duration-200 ease-in-out active:shadow-sm'
+        className ? `${className} ${buttonCss.button}` : buttonCss.button
       }
       onClick={onClick}
     >

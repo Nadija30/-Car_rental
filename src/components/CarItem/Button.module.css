@@ -1,0 +1,37 @@
+.button {
+  display: flex;
+  height: 28px;
+  width: 28px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  /* Додаткові стилі для ефекту при наведенні (необов'язково) */
+}
+
+.button:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.heart {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 20;
+  height: 18px;
+  width: 18px;
+}
+.favorite {
+  fill: var(--color-button);
+  stroke: var(--color-button);
+}

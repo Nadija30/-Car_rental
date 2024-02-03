@@ -7,6 +7,7 @@ import { COUNT_CARS } from '../../shared/constants';
 import { useLoadMore } from '../../shared/hooks';
 import { filteredCars } from '../../shared/utils';
 import CarItem from '../CarItem/CarItem';
+import listCss from './CarsList.module.css';
 
 const CarsList = ({ adverts }) => {
   const [currentPage, carsLimit, loadMore] = useLoadMore(COUNT_CARS);
@@ -14,13 +15,13 @@ const CarsList = ({ adverts }) => {
   const indexOfLastCar = currentPage * carsLimit;
   return (
     <>
-      <ul className="cards-list">
+      <ul className={listCss.carsList}>
         {filteredCars(adverts, indexOfLastCar).map(car => (
           <CarItem car={car} key={car.id} />
         ))}
       </ul>
       {adverts?.length >= indexOfLastCar && (
-        <Button className="button-load" label="Load more" onClick={loadMore} />
+        <Button className={listCss.load} label="Load more" onClick={loadMore} />
       )}
     </>
   );

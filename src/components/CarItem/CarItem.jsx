@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-
+import sprite from '../../assets/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../Button';
-import Title from '../Title';
+// import Title from '../Title';
 import DefaultCar from '../../assets/images/car.jpg';
 import { useToggle } from '../../shared/hooks';
 import { Modal, ModalCardDetail } from '../Modal';
@@ -16,7 +16,8 @@ import {
 import { selectFavorites } from '../../redux/cars/carsSelectors';
 import CardInfoBlock from './CardInfoBlock';
 import ThumbImage from 'components/ThumbImage';
-
+import itemCss from './CarItem.module.css';
+// import buttonCss from './Button.module.css';
 const CarItem = ({ car }) => {
   const { isOpen, open, close } = useToggle(false);
   const favorites = useSelector(selectFavorites);
@@ -36,33 +37,48 @@ const CarItem = ({ car }) => {
   };
   return (
     <>
-      <li className="card flex-auto">
-        <Button
+      <li className={itemCss.carItem}>
+        {/* <Button
           type="button"
           iconURL="#icon-heart"
           ariaLabel="heart icon"
           onClick={handleToggleFavorite}
           className={`heart ${isFavorite ? 'favorite' : ''}`}
-        />
-        <ThumbImage
-          className="card-image"
-          src={img ? img : DefaultCar}
-          alt={`${make} ${model}`}
-          width="274"
-          height="426"
-          loading="lazy"
-        />
-        <Title>
-          <span className="truncate hover:text-clip dark:text-white">
-            {make}
-            <span className="title-accent ml-1">{model}</span>, {year}
-          </span>
-          <span className="dark:text-white">{rentalPrice}</span>
-        </Title>
-
-        <CardInfoBlock locationData={locationData} carData={carData} />
-
-        <Button label="Learn more" className="card-big-button" onClick={open} />
+        /> */}
+        <div className={itemCss.carCard}>
+          <div className={itemCss.imgWrap}>
+            <ThumbImage
+              className={itemCss.img}
+              src={img ? img : DefaultCar}
+              alt={`${make} ${model}`}
+              width="274"
+              height="426"
+              loading="lazy"
+            />
+            <span
+              className={`${itemCss.heart} ${
+                isFavorite ? itemCss.favorite : ''
+              }`}
+              onClick={handleToggleFavorite}
+            >
+              <svg width="24" height="24">
+                <use href={`${sprite}#icon-heart`} />
+              </svg>
+            </span>
+          </div>
+          <div className={itemCss.descriptionWrap}>
+            <div className={itemCss.titleWrap}>
+              <h3 className={itemCss.title}>
+                {make} <span className={itemCss.span}>{model}</span>, {year}
+              </h3>
+              <p>{rentalPrice}</p>
+            </div>
+            <div className={itemCss.descriptListWrap}>
+              <CardInfoBlock locationData={locationData} carData={carData} />
+            </div>
+          </div>
+        </div>
+        <Button label="Learn more" className={itemCss.button} onClick={open} />
         {isOpen && (
           <Modal isOpen={isOpen} onClose={close}>
             <ModalCardDetail car={car} />

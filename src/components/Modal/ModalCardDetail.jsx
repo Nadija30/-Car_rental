@@ -14,7 +14,7 @@ import Title from '../Title';
 import RentalCondBlock from '../RentalConditionals/RentalCondBlock';
 
 import AccessoriesBlock from '../Accessories/AccessoriesBlock';
-
+import modalCss from './Modal.module.css';
 const ModalCardDetail = ({ car }) => {
   const {
     year,
@@ -37,33 +37,37 @@ const ModalCardDetail = ({ car }) => {
   const price = parsePrice(rentalPrice);
 
   return (
-    <>
-      <ThumbImage
-        width="461"
-        height="248"
-        src={img}
-        alt={`${make} ${model}`}
-        className="modal-car"
-        blockClass="w-[461px] h-[248px]"
-        loading="lazy"
-      />
-      <Title className="modal-title">
-        {make} <span className="modal-accent-title">{model}</span>, {year}
-      </Title>
-      <div className="mb-[14px] gap-[4px]">
-        <ul className="modal-description mb-[4px] flex items-center justify-start">
-          {renderItems(locationData, <Separator />)}
-        </ul>
-        <ul className="modal-description flex items-center justify-start">
-          {renderItems(carData, <Separator />)}
-        </ul>
+    <div className={modalCss.modalCarWrap}>
+      <div className={modalCss.modalCar}>
+        <div className={modalCss.modalImgWrap}>
+          <ThumbImage
+            width="461"
+            height="248"
+            src={img}
+            alt={`${make} ${model}`}
+            className="modal-car"
+            blockClass="w-[461px] h-[248px]"
+            loading="lazy"
+          />
+        </div>
+        <Title className="modal-title">
+          {make} <span className="modal-accent-title">{model}</span>, {year}
+        </Title>
+        <div className="mb-[14px] gap-[4px]">
+          <ul className="modal-description mb-[4px] flex items-center justify-start">
+            {renderItems(locationData, <Separator />)}
+          </ul>
+          <ul className="modal-description flex items-center justify-start">
+            {renderItems(carData, <Separator />)}
+          </ul>
+        </div>
+        <div className="modal-accent-descr dark:text-white">{description}</div>
+        <AccessoriesBlock
+          title="Accessories and functionalities"
+          accessories={accessories}
+          functionalities={functionalities}
+        />
       </div>
-      <div className="modal-accent-descr dark:text-white">{description}</div>
-      <AccessoriesBlock
-        title="Accessories and functionalities"
-        accessories={accessories}
-        functionalities={functionalities}
-      />
       <RentalCondBlock
         title="Rental Conditions"
         rentConditions={rentConditions}
@@ -74,7 +78,7 @@ const ModalCardDetail = ({ car }) => {
       <a href="tel:+380730000000" className="modal-btn-link">
         Rental car
       </a>
-    </>
+    </div>
   );
 };
 

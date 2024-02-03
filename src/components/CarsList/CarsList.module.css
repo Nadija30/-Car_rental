@@ -1,0 +1,33 @@
+.carsList {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 15px;
+  margin-bottom: 100px;
+
+  @media screen and (min-width: 768px) {
+    row-gap: 30px;
+    column-gap: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    row-gap: 50px;
+    column-gap: 29px;
+  }
+}
+.load {
+  margin: 0 auto 0;
+  display: block;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(52 112 255 / var(--tw-text-opacity));
+  text-decoration-line: underline;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition-duration: 0.2s;
+  width: 120px;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
