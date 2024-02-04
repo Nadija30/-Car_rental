@@ -1,105 +1,82 @@
-# React homework template
+App for a car rental company
+Description.
+The application consists of 3 pages:
 
-This project was created with
-[Create React App](https://github.com/facebook/create-react-app). To get
-acquainted and configure additional features
-[refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+home page with a general description of the services provided by the company.
+a page containing a catalogue of cars of various configurations, which the user can filter by brand, price per hour of car rental and number of kilometres, travelled by the car during its operation (mileage).
+a page with ads that have been added to the user's favourites.
+All pages have a header with a page menu, a viewing area for the main information, and a footer with the contact details of the app owner.
 
-## Creating a repository by template
+Home page.
+It has a hero section with a general description of the service and a link to the catalogue page car catalogue page.
+If necessary, sections with information about the company, detailed description of services and car rental conditions.
+Car catalogue page
+Section with car cards
+When you open the page, the first 12 car rental ads from the database are rendered.
+Each next 12 ads from the database can be loaded on the page by clicking on the Load more button. It is located under the ads.
+When all the ads from the database are loaded, the Load more button disappears.
+When you click on the heart button on the ad card, it is added to the list of favourites to the list of favourites, and the colour of the button changes to blue.
+When the page refreshes, the end result of the user's actions is recorded (favourites cars remain in the list of favourites). Implemented using local storage.
+If you click on the "heart" button again, the advert is removed from the the list of favourites, and the colour of the button changes to its original state.
+Clicking on the Learn more button opens a modal window with detailed information about the car and its rental conditions.
+Modal window with detailed information about the car
+The modal window is closed by clicking on the button in the form of a "cross", by clicking on the backdrop button or by pressing the Esc key.
 
-Use this GoIT repository as a template for creating a repository
-of your project. To use it just tap the `«Use this template»` button and choose
-`«Create a new repository»` option, as you can see on the image below.
+The Rental car button allows the user to contact the company by phone number +380730000000.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+Vehicle card filtering section
+The first car search field by brand is implemented using dropdown with car brands. The list of car brands consists of all brands, that are already in the database.
 
-The page for creating a new repository will open on the next step. Fill out
-the Name field and make sure the repository is public, then click
-`«Create repository from template»` button.
+The second search field for cars in the price range up to the specified amount per hour of rent the car is implemented with the help of dropdown. The step is $10.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+The third group of input allows you to choose a car in the selected interval of its mileage. The user enters an integer into the field, and it is displayed separated by commas, after thousands (for example, the user enters 4500 and sees 4,500).
 
-You now have a personal project repository, having a repository-template file 
-and folder structure. After that, you can work with it as you would with any 
-other private repository: clone it on your computer, write code, commit, and 
-send it to GitHub.
+The car mileage fields can be reset by pressing the 'delete' button (with a cross). It appears as soon as the field is no longer empty.
 
-## Preparing for coding
+All selected filters can be reset simultaneously by pressing the Reset button that appears button that appears if at least one filter is selected.
 
-1. Make sure you have an LTS version of Node.js installed on your computer.
-   [Download and install](https://nodejs.org/en/) if needed.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command.
-4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
-   page will automatically reload after saving changes to the project files.
+The car search is performed by pressing the Search button.
 
-## Deploy
+Page of selected cars
+Renders the cars that have been added to the list of favourites.
+If there are no selected cars, a blank page is displayed with a blank page with an offer to visit the car catalogue and a link to the catalogue.
+Test task
+Description.
+Create an application for a company that provides car rental services in Ukraine. for rent in Ukraine. The application consists of 3 pages:
 
-The production version of the project will automatically be linted, built, and
-deployed to GitHub Pages, in the `gh-pages` branch, every time the `main` branch
-is updated. For example, after a direct push or an accepted pull request. To do
-this, you need to edit the `homepage` field in the `package.json` file,
-replacing `your_username` and `your_repo_name` with your own, and submit the
-changes to GitHub.
+home page with a general description of the services provided by the company. Styling and design is at your discretion.
+a page containing a catalogue of cars of various configurations, which the user can filter by brand, price per hour of car rental, and number of kilometres, travelled by the car during its operation (mileage).
+a page with ads that have been added to the user's favourites The external The appearance of the application should consist of a sidebar and a viewing area.
+Terms of reference
+According to. layout implement a car rental ad card.
+On the first page of the catalogue, 8 ads should be rendered, and the rest should be by clicking on the Load more button.
+When you click on the "heart" button on the ad card, it should should be added to the list of favourites and the colour of the button should change.
+When the page is refreshed, the end result of the user's actions should be recorded. That is, if you add an ad to your favourites and refresh the page, the button still still remains in the "favourite ad" state with the corresponding colour.
+If you click on the heart button again, the ad should be removed from the list of favourites, and the colour of the button should change to its original state.
+When you click on the Learn more button, a modal window should open with detailed information about the car and its rental conditions.
+The modal window should be closed by clicking on the "cross" button, by clicking on the backdrop button or by pressing the Esc key.
+In the code, the mileage of the car must be written in one value (for example, 4500). В UI - it is displayed separated by commas (4,500).
+The Rental car button should be implemented as a link that will allow the user to contact the company by phone number +380730000000.
+Create a routing using React Router. The application should have the following routes:
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+"/" - the home page with a general description of the services provided by the company
+"/catalogue" - a page containing a catalogue of cars of different configurations
+"/favourites" - a page with ads that have been added by the user to favourites If the user has followed a route that does not exist, he must be redirect to the home page. To work with the list of ads, create your personal backend for development using the UI service https://mockapi.io/. Create the adverts resource. Use the resource builder and describe the advert object as described below.
+Advert
 
-Next, you need to go to the settings of the GitHub repository (`Settings` >
-`Pages`) and set the distribution of the production version of files from the
-`/root` folder of the `gh-pages` branch, if this was not done automatically.
+Create an advert in Mockapi with the following fields: id, year, make, model, type, img, description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice, rentalCompany, address, rentalConditions, mileage (see the screenshot below). To fill the collection you can take adverts.json
+You can choose the car image yourself.
+The database should contain at least 32 ads with different values (at your discretion). Pagination is implemented, where one pagination page should contain 8 ads.
+Additional task
+Add filtering:
 
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Deployment status
-
-The deployment status of the latest commit is displayed with an icon next to its
-ID.
-
-- **Yellow color** - the project is being built and deployed.
-- **Green color** - deployment completed successfully.
-- **Red color** - an error occurred during linting, build or deployment.
-
-More detailed information about the status can be viewed by clicking on the
-icon, and in the drop-down window, follow the link `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Live page
-
-After some time, usually a couple of minutes, the live page can be viewed at the
-address specified in the edited `homepage` property. For example, here is a link
-to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
-`package.json` file.
-
-### Routing
-
-If your application uses the `react-router-dom` library for routing, you must
-additionally configure the `<BrowserRouter>` component by passing the exact name
-of your repository in the `basename` prop. Slashes at the beginning and end of
-the line are required.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## How it works
-
-![How it works](./assets/how-it-works.png)
-
-1. After each push to the `main` branch of the GitHub repository, a special
-   script (GitHub Action) is launched from the `.github/workflows/deploy.yml`
-   file.
-2. All repository files are copied to the server, where the project is
-   initialized and linted and built before deployment.
-3. If all steps are successful, the built production version of the project
-   files is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
+dropdown with car brands makes.json - show ads with cars of the corresponding brand
+dropdown with prices per hour of car rental ($10 increments) - show ads with cars whose rental price is within the price range selected by the by the user
+group input to determine the range of mileage within which the user will search for ads
+Execution criteria
+The layout is fixed in rx, semantic and valid.
+There are no errors in the browser console.
+Interactivity works according to the terms of reference.
+The code is formatted and without comments.
+The README.md should be described in the repository.
+The project is deployed on github pages or netlify.com.
