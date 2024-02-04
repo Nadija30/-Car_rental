@@ -175,7 +175,7 @@ export const FiltersCars = ({ cars }) => {
               </label>
               <p
                 className={`${filterCss.errorContainer} ${
-                  isFormDisabled ? '' : filterCss.opacity100
+                  isFormDisabled ? '' : filterCss.errorContainerActive
                 }`}
               >
                 {errors?.from && <span>{errors.from.message}</span>}
