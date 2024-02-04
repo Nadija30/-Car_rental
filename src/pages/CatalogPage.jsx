@@ -27,9 +27,9 @@ const CatalogPage = () => {
       <section className={pagesCss.section}>
         <div className={pagesCss.container} style={{ '--top': '50px' }}>
           <FiltersCars cars={filteredCars} />
-          {cars?.length > 0 && <CarsList adverts={filteredCars} />}
         </div>
       </section>
+      {cars?.length > 0 && <CarsList adverts={filteredCars} />}
     </>
   );
 };

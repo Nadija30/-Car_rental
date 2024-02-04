@@ -1,0 +1,122 @@
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+}
+.form {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  flex-wrap: wrap;
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.formWrapp {
+  margin-bottom: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+}
+.selectWrap {
+  margin-bottom: 2px;
+}
+.selectLabel {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-text-label);
+}
+.selectBrand {
+  display: flex;
+  font-family: inherit;
+  font-weight: 500;
+  height: 48px;
+  width: 224px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.875rem;
+  border-style: none;
+  background: var(--color-filter-field);
+  padding: 14px 18px;
+  font-size: 16px;
+}
+.selectWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+.selectPrice {
+  display: flex;
+  height: 48px;
+  width: 125px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.875rem;
+  border-style: none;
+  background: var(--color-filter-field);
+  padding: 14px 18px;
+  font-size: 16px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.container {
+  margin-bottom: 2px;
+  display: flex;
+  flex-direction: column;
+}
+.relativeWrap {
+  position: relative;
+  display: flex;
+}
+.relativeWrap::after {
+  position: absolute;
+  right: 50%;
+  height: 48px;
+  width: 1px;
+  background-color: rgba(138, 138, 137, 0.2);
+  content: '';
+}
+
+.relative {
+  position: relative;
+}
+.selectFrom {
+  border-radius: 14px 0 0 14px/14px 0px 0px 14px;
+  border-style: none;
+  background: var(--color-filter-field);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 63px;
+  padding-right: 0.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.selectPlaceholder {
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  line-height: 1.25rem;
+}
+
+.selectTo {
+  border-radius: 0 14px 14px 0/0px 14px 14px 0px;
+  border-style: none;
+  background: var(--color-filter-field);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 53px;
+  padding-right: 0.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}

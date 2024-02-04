@@ -9,7 +9,7 @@ import { resetFilter, setFilter } from '../../redux/cars/carsSlise';
 import { selectFilter } from '../../redux/cars/carsSelectors';
 import { priceOptions } from '../../shared/utils';
 import Button from '../Button';
-
+import filterCss from './FiltersCars.module.css';
 export const FiltersCars = ({ cars }) => {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
@@ -52,15 +52,15 @@ export const FiltersCars = ({ cars }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={`form flex-wrap px-3 ${
-        isFormDisabled ? 'pointer-events-none opacity-60' : ''
+      className={`${filterCss.form} ${
+        isFormDisabled ? filterCss.disabled : ''
       }`}
       disabled={isFormDisabled}
     >
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="form mb-2 flex-wrap items-center gap-3">
-          <div className="select-wrapper mb-2">
-            <label htmlFor="brand" className="select-label">
+      <div className={filterCss.flexContainer}>
+        <div className={filterCss.formWrapp}>
+          <div className={filterCss.selectWrap}>
+            <label htmlFor="brand" className={filterCss.selectLabel}>
               Car brand
             </label>
             <Controller
@@ -69,7 +69,7 @@ export const FiltersCars = ({ cars }) => {
               rules={{ required: true, message: 'Brand is required' }}
               render={({ field }) => (
                 <>
-                  <select {...field} className="select-brand">
+                  <select {...field} className={filterCss.selectBrand}>
                     <option value="" className="select-placeholder">
                       Enter the text
                     </option>
@@ -95,8 +95,8 @@ export const FiltersCars = ({ cars }) => {
               )}
             />
           </div>
-          <div className="select-wrapper mb-2">
-            <label htmlFor="price" className="select-label">
+          <div className={filterCss.selectWrapper}>
+            <label htmlFor="price" className={filterCss.selectLabel}>
               Price/ 1 hour
             </label>
             <div>
@@ -112,7 +112,7 @@ export const FiltersCars = ({ cars }) => {
                 }}
                 render={({ field }) => (
                   <>
-                    <select {...field} className="select-price">
+                    <select {...field} className={filterCss.selectPrice}>
                       <option value="" className="select-placeholder">
                         To $
                       </option>
@@ -143,15 +143,15 @@ export const FiltersCars = ({ cars }) => {
               />
             </div>
           </div>
-          <div className="mb-2 flex flex-col">
-            <label htmlFor="minMileage" className="select-label">
+          <div className={filterCss.container}>
+            <label htmlFor="minMileage" className={filterCss.selectLabel}>
               Car mileage / km (from)
             </label>
-            <div className="relative flex after:absolute after:inset-y-0 after:right-1/2 after:h-[48px] after:w-[1px] after:bg-[rgba(138,138,137,0.2)] after:content-['']">
-              <label className="relative">
+            <div className={filterCss.relativeWrap}>
+              <label className={filterCss.relative}>
                 <input
                   type="number"
-                  className="select-from relative m-auto select-text"
+                  className={filterCss.selectFrom}
                   {...register('from', {
                     required: 'This field is required',
                     min: {
@@ -160,14 +160,12 @@ export const FiltersCars = ({ cars }) => {
                     },
                   })}
                 />
-                <span className="select-placeholder absolute left-3 top-1/2 -translate-y-1/2">
-                  From
-                </span>
+                <span className={filterCss.selectPlaceholder}>From</span>
               </label>
-              <label className="relative">
+              <label className={filterCss.relative}>
                 <input
                   type="number"
-                  className="select-to select-text"
+                  className={filterCss.selectTo}
                   {...register('to', {
                     required: 'This field is required',
                     min: {
@@ -182,9 +180,7 @@ export const FiltersCars = ({ cars }) => {
                     },
                   })}
                 />
-                <span className="select-placeholder absolute left-3 top-1/2 -translate-y-1/2">
-                  To
-                </span>
+                <span className={filterCss.selectPlaceholder}>To</span>
               </label>
               <p
                 className={`error flex items-center justify-between gap-1 ${
