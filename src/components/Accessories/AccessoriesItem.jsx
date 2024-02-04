@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-
+import modalCss from '../Modal/Modal.module.css';
 const AccessoriesItem = ({ items, separator }) => {
   return (
-    <ul className="mb-[4px] flex flex-wrap items-center justify-start">
+    <ul className={modalCss.descriptList}>
       {items.map((item, idx) => (
         <li key={idx} className="text-description dark:text-white/50">
           {item}

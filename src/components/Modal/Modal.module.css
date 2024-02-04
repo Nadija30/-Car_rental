@@ -88,3 +88,93 @@
     width: 461px;
   }
 }
+.modalDescriptionWrap {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+
+  @media screen and (min-width: 768px) {
+    gap: 24px;
+  }
+}
+.block {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+  margin-bottom: 8px;
+}
+.span {
+  color: var(--color-text-loadmore);
+}
+.descriptListWrap {
+  display: flex;
+  height: auto;
+  gap: 4px;
+  flex-direction: column;
+}
+.descriptList {
+  display: inline-flex;
+  height: 18px;
+  gap: 6px;
+  color: var(--color-text-second);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.descript-item {
+  display: flex;
+  flex-shrink: 1;
+}
+.descript {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.42;
+  height: 40px;
+  overflow-y: scroll;
+}
+.titleH4 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  margin-bottom: 8px;
+}
+.conditionsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--color-text-conditions);
+}
+.conditionsItem {
+  display: flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 35px;
+  background: var(--color-back-conditions);
+}
+.conditionsItem p {
+  margin: 0;
+}
+
+.span {
+  margin-left: 8px;
+}
+.modalBtnLink {
+  display: flex;
+  width: 168px;
+  height: 44px;
+  padding: 12px;
+  justify-content: center;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-button);
+  color: var(--color-text-button-and-back);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}

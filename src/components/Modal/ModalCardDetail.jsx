@@ -10,7 +10,6 @@ import {
 } from '../../shared/utils';
 import Separator from '../Separator';
 import ThumbImage from '../ThumbImage';
-import Title from '../Title';
 import RentalCondBlock from '../RentalConditionals/RentalCondBlock';
 
 import AccessoriesBlock from '../Accessories/AccessoriesBlock';
@@ -50,32 +49,36 @@ const ModalCardDetail = ({ car }) => {
             loading="lazy"
           />
         </div>
-        <Title className="modal-title">
-          {make} <span className="modal-accent-title">{model}</span>, {year}
-        </Title>
-        <div className="mb-[14px] gap-[4px]">
-          <ul className="modal-description mb-[4px] flex items-center justify-start">
-            {renderItems(locationData, <Separator />)}
-          </ul>
-          <ul className="modal-description flex items-center justify-start">
-            {renderItems(carData, <Separator />)}
-          </ul>
-        </div>
-        <div className="modal-accent-descr dark:text-white">{description}</div>
-        <AccessoriesBlock
-          title="Accessories and functionalities"
-          accessories={accessories}
-          functionalities={functionalities}
-        />
-      </div>
-      <RentalCondBlock
-        title="Rental Conditions"
-        rentConditions={rentConditions}
-        mile={mile}
-        price={price}
-      />
+        <div className={modalCss.modalDescriptionWrap}>
+          <div className={modalCss.block}>
+            <h3 className={modalCss.title}>
+              {make} <span className={modalCss.span}>{model}</span>, {year}
+            </h3>
+            <div className={modalCss.descriptListWrap}>
+              <ul className={modalCss.descriptList}>
+                {renderItems(locationData, <Separator />)}
+              </ul>
+              <ul className={modalCss.descriptList}>
+                {renderItems(carData, <Separator />)}
+              </ul>
+            </div>
+            <p className={modalCss.descript}>{description}</p>
+          </div>
+          <AccessoriesBlock
+            title="Accessories and functionalities"
+            accessories={accessories}
+            functionalities={functionalities}
+          />
 
-      <a href="tel:+380730000000" className="modal-btn-link">
+          <RentalCondBlock
+            title="Rental Conditions"
+            rentConditions={rentConditions}
+            mile={mile}
+            price={price}
+          />
+        </div>
+      </div>
+      <a href="tel:+380730000000" className={modalCss.modalBtnLink}>
         Rental car
       </a>
     </div>

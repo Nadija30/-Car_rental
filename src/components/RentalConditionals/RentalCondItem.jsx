@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-
+import modalCss from '../Modal/Modal.module.css';
 const RentalCondItem = ({ conditionText, conditionValue }) => {
   return (
-    <li className="modal-btn-cond dark:bg-slate-600">
-      <p className="cond dark:text-white/50">{conditionText}</p>
+    <li className={modalCss.conditionsItem}>
+      <p>{conditionText}</p>{' '}
       {conditionValue && (
-        <span className="modal-accent-cond">{conditionValue}</span>
+        <span className={modalCss.span}>{conditionValue}</span>
       )}
     </li>
   );
