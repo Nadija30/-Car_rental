@@ -2,9 +2,9 @@ import { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import modalCss from './Modal.module.css';
 import { handleClose } from '../../shared/utils';
-import Button from '../Button';
+// import Button from '../Button';
 import { createPortal } from 'react-dom';
-
+import sprite from '../../assets/sprite.svg';
 const modalContainer = document.getElementById('modal');
 
 const Modal = ({ onClose, children, isOpen }) => {
@@ -33,13 +33,21 @@ const Modal = ({ onClose, children, isOpen }) => {
   return createPortal(
     <div className={modalCss.backdrop} onClick={handleModalClose}>
       <div className={modalCss.modal}>
-        <Button
+        <svg
+          className={modalCss.modalSvg}
+          onClick={onClose}
+          width="24"
+          height="24"
+        >
+          <use href={`${sprite}#icon-x`} />
+        </svg>
+        {/* <Button
           onClick={onClose}
           className="close"
           type="button"
           iconURL="#icon-close"
           ariaLabel="close icon"
-        />
+        /> */}
         {children}
       </div>
     </div>,

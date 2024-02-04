@@ -178,3 +178,12 @@
   font-weight: 600;
   line-height: 1.4;
 }
+.modalSvg {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-text-main);
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
