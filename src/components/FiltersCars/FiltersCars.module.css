@@ -7,7 +7,6 @@
 }
 .form {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
   gap: 1rem;
   padding-left: 0.75rem;
@@ -101,6 +100,8 @@
   padding-right: 0.5rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
+  width: 160px;
+  height: 48px;
 }
 .selectPlaceholder {
   position: absolute;
@@ -122,6 +123,13 @@
   padding-right: 0.5rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
+  width: 130px;
+  height: 48px;
+
+  @media screen and (min-width: 768px) {
+    width: 160px;
+    height: 48px;
+  }
 }
 .errorContainer {
   display: flex;
