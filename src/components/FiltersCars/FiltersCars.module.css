@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 2px;
+  gap: 0.5rem;
 }
 .form {
   display: flex;
@@ -119,4 +119,39 @@
   padding-right: 0.5rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.errorContainer.opacity-100 {
+  opacity: 1;
+}
+.flexContainerBtn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.button {
+  display: flex;
+  width: 136px;
+  height: 48px;
+  padding: 14px 44px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-button);
+  color: var(--color-text-button-and-back);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
 }

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { useLocation } from 'react-router-dom';
 import { useUniquePropValues } from '../../shared/hooks';
-import { resetFilter, setFilter } from '../../redux/cars/carsSlise';
+import { setFilter } from '../../redux/cars/carsSlise';
 import { selectFilter } from '../../redux/cars/carsSelectors';
 import { priceOptions } from '../../shared/utils';
 import Button from '../Button';
@@ -40,15 +40,6 @@ export const FiltersCars = ({ cars }) => {
     dispatch(setFilter(data));
   };
 
-  const resetFilterInRedux = () => {
-    dispatch(resetFilter());
-    reset({
-      brand: '',
-      price: '',
-      from: '',
-      to: '',
-    });
-  };
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -183,8 +174,8 @@ export const FiltersCars = ({ cars }) => {
                 <span className={filterCss.selectPlaceholder}>To</span>
               </label>
               <p
-                className={`error flex items-center justify-between gap-1 ${
-                  isFormDisabled ? 'opacity-0' : 'opacity-100'
+                className={`${filterCss.errorContainer} ${
+                  isFormDisabled ? '' : filterCss.opacity100
                 }`}
               >
                 {errors?.from && <span>{errors.from.message}</span>}
@@ -193,14 +184,8 @@ export const FiltersCars = ({ cars }) => {
             </div>
           </div>
         </div>
-        <div className="-mt-6 mb-2 flex flex-wrap items-center justify-center gap-3">
-          <Button type="submit" className="button-search" label="Search" />
-          <Button
-            type="button"
-            className="button-search"
-            onClick={resetFilterInRedux}
-            label="Reset"
-          />
+        <div className={filterCss.flexContainerBtn}>
+          <Button type="submit" className={filterCss.button} label="Search" />
         </div>
       </div>
     </form>
