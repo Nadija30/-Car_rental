@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Title = ({ children, className }) => {
+const Title = ({ children }) => {
   return <h2>{children}</h2>;
 };
 

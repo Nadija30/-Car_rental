@@ -3,7 +3,6 @@ import sprite from '../../assets/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../Button';
-// import Title from '../Title';
 import DefaultCar from '../../assets/images/car.jpg';
 import { useToggle } from '../../shared/hooks';
 import { Modal, ModalCardDetail } from '../Modal';
@@ -17,7 +16,7 @@ import { selectFavorites } from '../../redux/cars/carsSelectors';
 import CardInfoBlock from './CardInfoBlock';
 import ThumbImage from 'components/ThumbImage';
 import itemCss from './CarItem.module.css';
-// import buttonCss from './Button.module.css';
+
 const CarItem = ({ car }) => {
   const { isOpen, open, close } = useToggle(false);
   const favorites = useSelector(selectFavorites);
@@ -38,13 +37,6 @@ const CarItem = ({ car }) => {
   return (
     <>
       <li className={itemCss.carItem}>
-        {/* <Button
-          type="button"
-          iconURL="#icon-heart"
-          ariaLabel="heart icon"
-          onClick={handleToggleFavorite}
-          className={`heart ${isFavorite ? 'favorite' : ''}`}
-        /> */}
         <div className={itemCss.carCard}>
           <div className={itemCss.imgWrap}>
             <ThumbImage
