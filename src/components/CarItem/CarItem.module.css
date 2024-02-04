@@ -83,15 +83,12 @@
   display: inline-block;
   width: 18px;
   height: 18px;
-}
-
-.heart svg {
   fill: var(--color-text-button-and-back);
   stroke: var(--color-text-button-and-back);
   transition: fill 0.2s ease-in-out, stroke 0.2s ease-in-out;
 }
 
-.heart:active svg {
+.favorite {
   fill: var(--color-button);
   stroke: var(--color-button);
   transition: fill 0.2s ease-in-out, stroke 0.2s ease-in-out;

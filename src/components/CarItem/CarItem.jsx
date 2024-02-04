@@ -47,16 +47,17 @@ const CarItem = ({ car }) => {
               height="426"
               loading="lazy"
             />
-            <span
+            <svg
               className={`${itemCss.heart} ${
                 isFavorite ? itemCss.favorite : ''
               }`}
               onClick={handleToggleFavorite}
+              svg
+              width="24"
+              height="24"
             >
-              <svg width="24" height="24">
-                <use href={`${sprite}#icon-heart`} />
-              </svg>
-            </span>
+              <use href={`${sprite}#icon-heart`} />
+            </svg>
           </div>
           <div className={itemCss.descriptionWrap}>
             <div className={itemCss.titleWrap}>
